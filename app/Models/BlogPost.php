@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use App\Enums\BlogPostSource;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class BlogPost extends Model {
+	/** @use HasFactory<\Database\Factories\BlogPostFactory> */
+	use HasFactory;
+	protected $fillable = [ 
+		'title',
+		'body',
+		'source',
+	];
+	protected $casts = [ 
+		'source' => BlogPostSource::class,
+	];
+}
